@@ -1,0 +1,43 @@
+<!doctype html>
+<html ng-app ng-controller="PhoneListCtrl">
+<head>
+    <meta charset="utf-8"/>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/c2-controller.js"></script>
+
+    <title  ng-bind-template="Google : {{query}}">手机 </title>
+
+</head>
+<body >
+
+
+    <p>Total number of phones: {{phones.length}}</p>
+
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span2">
+                <!--Sidebar content-->
+
+                Search: <input ng-model="query">
+
+            </div>
+            <div class="span10">
+                <!--Body content-->
+
+                <ul class="phones">
+                    <li ng-repeat="phone in phones | filter:query">
+                        {{phone.name}}
+                        <p>{{phone.snippet}}</p>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

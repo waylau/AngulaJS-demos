@@ -1,0 +1,36 @@
+<!doctype html>
+<html ng-app ng-controller="PhoneListCtrl">
+<head>
+    <meta charset="utf-8"/>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+
+    <script src="js/angular.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/c5-controller.js"></script>
+
+    <title>手机 : {{query}}</title>
+
+</head>
+<body >
+<p>Total number of phones: {{phones.length}}</p>
+
+Search: <input ng-model="query">
+Sort by:
+<select ng-model="orderProp">
+    <option value="name">Alphabetical</option>
+    <option value="age">Newest</option>
+</select>
+
+
+<ul class="phones">
+    <li ng-repeat="phone in phones | filter:query | orderBy:orderProp" class="thumbnail">
+        <a href="#/phones/{{phone.id}}">{{phone.name}}</a>
+        <a href="#/phones/{{phone.id}}" class="thumb"><img ng-src="{{phone.imageUrl}}"></a>
+
+        <p>{{phone.snippet}}</p>
+    </li>
+</ul>
+
+</body>
+</html>

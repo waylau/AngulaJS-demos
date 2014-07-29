@@ -1,0 +1,33 @@
+<!doctype html>
+<html ng-app="c9-phonecat" >
+<head>
+    <meta charset="utf-8"/>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-resource.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="js/c11-app.js"></script>
+    <script src="js/c11-controller.js"></script>
+    <script src="js/c9-filters.js"></script>
+    <script src="js/c11-services.js"></script>
+
+
+
+</head>
+<body >
+
+<div ng-view></div>
+
+{{ "lower cap string" | uppercase }}
+{{ {foo: "bar", baz: 23} | json }}
+{{ 1304375948024 | date }}
+{{ 1304375948024 | date:"MM/dd/yyyy @ h:mma" }}
+{{ false | checkmark }}
+{{ true | checkmark }}
+
+<input ng-model="userInput"> Uppercased: {{ userInput | uppercase }}
+
+</body>
+</html>
